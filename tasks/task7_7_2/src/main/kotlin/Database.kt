@@ -10,10 +10,20 @@ fun createDatabase() = mutableMapOf<String,String>()
 
 fun Database.load(filename: String) {
     // Add code here to read names and numbers from the file
-    // and insert them as keys and values into the map
+    Path(filename).forEachLine {
+        val item = it.split(",")
+        // and insert them as keys and values into the map
+        this[item[0]] = item[1]
+    }
 }
 
 fun Database.save(filename: String) {
     // Add code here to write the keys and values of the map to
     // the file, separated by a comma, one pairing per line
+    val path = Path(filename)
+    path.writer().use {
+        for ((k, v) in this.entries) {
+            it.write("$k,$v\n")
+        }
+    }
 }
