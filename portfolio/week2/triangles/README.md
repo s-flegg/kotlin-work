@@ -5,7 +5,7 @@ named `Triangle`, which is simply an alias for `Triple<Double,Double,Double>`.
 The purpose of this triple is to bundle together three values that represent
 the lengths of a triangle's three sides.
 
-Your task is to add functions named `isValidTriangle()` and `triangleArea()`
+Your[Triangles.kt](src/Triangles.kt) task is to add functions named `isValidTriangle()` and `triangleArea()`
 to this file. Each of these functions should have a single parameter, of
 type `Triangle`. The return type of `isValidTriangle()` should be `Boolean`,
 and the return type of `triangleArea()` should be `Double`.
