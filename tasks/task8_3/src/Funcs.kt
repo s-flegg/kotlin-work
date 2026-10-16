@@ -7,6 +7,11 @@ typealias Record = Pair<String,Double>
 
 fun fetchData(filename: String) = buildList {
     // Finish the implementation of this function
+    Path(filename).forEachLine {
+        val data = it.split(",")
+        val record = Record(data[0], data[1].toDouble())
+        add(record)
+    }
 }
 
 // Challenge: compute average temperature with one line of code
